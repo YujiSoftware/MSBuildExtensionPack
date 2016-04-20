@@ -238,12 +238,12 @@ namespace MSBuild.ExtensionPack.Framework
             string properties = item.GetMetadata("Properties");
             if (!string.IsNullOrEmpty(properties))
             {
-                properties = " /p:" + properties;
+                properties = " \"/p:" + properties + "\"";
             }
 
             if (!string.IsNullOrEmpty(this.AdditionalProperties))
             {
-                properties += " /p:" + this.AdditionalProperties;
+                properties += " \"/p:" + this.AdditionalProperties + "\"";
             }
 
             string projectFile = this.ProjectFile == null ? this.BuildEngine.ProjectFileOfTaskNode : this.ProjectFile.ItemSpec;
@@ -374,12 +374,12 @@ namespace MSBuild.ExtensionPack.Framework
             string properties = item.GetMetadata("Properties");
             if (!string.IsNullOrEmpty(properties))
             {
-                properties = " /p:" + properties;
+                properties = " \"/p:" + properties + "\"";
             }
 
             if (!string.IsNullOrEmpty(this.AdditionalProperties))
             {
-                properties += " /p:" + this.AdditionalProperties;
+                properties += " \"/p:" + this.AdditionalProperties + "\"";
             }
 
             string projectFile = this.ProjectFile == null ? this.BuildEngine.ProjectFileOfTaskNode : this.ProjectFile.ItemSpec;
